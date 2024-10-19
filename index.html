@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+    <div class="header">
+        <h2><img src="https://i.gifer.com/HpUO.gif" style="width: 20px; height: auto;">  Каналы и объявления</h2>
+        <button id="eternal-links-button" class="icon-button">ВЕЧНЫЕ ССЫЛКИ</button>
+    </div>
+  
+    <div id="content" class="content-section"></div>
+    <div class="footer">
+<span id="ad-count" class="ad-count">Доступно: </span>
+      
+        <button id="add-button" class="add-button">+</button>
+    </div>
+
+<!-- Модальное окно для добавления контента -->
+<div id="addModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Добавьте свой канал / объявление / рекламу</h2>
+        <form id="addForm">
+            <input type="text" id="title" placeholder="Заголовок" required>
+            <textarea id="description" placeholder="Описание" required rows="4"></textarea>
+            <input type="text" id="link" placeholder="Ссылка (@username или URL)" required>
+          
+          <div class="checkbox-container">
+                <input type="checkbox" required>
+                <label>Я принимаю <a href="https://example.com/" target="_blank">условия</a> и несу ответственность за размещение.</label>
+            </div>
+          
+          <button class="icon-button" type="submit">ОПУБЛИКОВАТЬ</button>
+            
+        </form>
+    </div>
+</div>
+
+    <!-- Модальное окно для вечных ссылок -->
+<div id="eternalLinksModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>ВАША РЕКЛАМА:</h2>
+        
+        <!-- Список вечных ссылок -->
+<ul id="eternalLinksList">
+    <li>
+        <strong>Заголовок 1</strong> <span>Описание до 50 символов.</span>
+        <a href="https://example.com" target="_blank">Перейти</a>
+    </li>
+    <li>
+        <strong>Заголовок 2</strong> <span>Описание до 50 символов.</span>
+        <a href="https://example.com" target="_blank">Перейти</a>
+    </li>
+    <li>
+        <strong>Заголовок 3</strong> <span>Описание до 50 символов.</span>
+        <a href="https://example.com" target="_blank">Перейти</a>
+    </li>
+    <li>
+        <strong>Заголовок 4</strong> <span>Описание до 50 символов.</span>
+        <a href="https://example.com" target="_blank">Перейти</a>
+    </li>
+</ul>
+
+          
+            <!-- Добавьте здесь до 10 ссылок по аналогии -->
+        </ul>
+        <p>Здесь будет ваша вечная рекламная ссылка. Чтобы добавить, напишите мне в ЛС Telegram 👇</p>
+        <button class="icon-button" id="telegramButton" onclick="window.open('https://t.me/csu_online', '_blank')">Написать</button>
+    </div>
+</div>
+
+<!-- Модальное окно для руководства -->
+<div id="guideModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Пошаговое руководство</h2>
+        <p>1. Нажмите на кнопку "+" для добавления контента.</p>
+        <p>2. Заполните необходимые поля в форме.</p>
+        <p>3. Нажмите "Опубликовать", чтобы добавить контент.</p>
+        
+        <p>
+            Продолжая и нажимая кнопку "Прочитал", вы соглашаетесь с 
+            <a href="path/to/disclaimer.html" target="_blank">отказом от ответственности</a>.
+        </p>
+        
+        <button class="icon-button" id="read-button">Прочитал</button>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

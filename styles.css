@@ -1,0 +1,310 @@
+body {
+    font-family: Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.8); /* Затемнённый фон */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+}
+
+.add-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+}
+
+.content-section {
+    margin: 50px 20px 100px; /* Отступ сверху и снизу */
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.modal-content {
+    background-color: #333; 
+    margin: 15% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 80%; 
+}
+
+.close-button {
+    color: #aaa; 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold; 
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+input {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+@keyframes blink {
+    0%, 100% {
+        color: white;
+    }
+    50% {
+        color: yellow;
+    }
+}
+
+.icon-button {
+    animation: blink 3s infinite;
+    transition: transform 0.5s ease;
+}
+
+.icon-button:hover {
+    transform: scale(1.1);
+}
+
+.add-button {
+    width: 60px;
+    height: 60px;
+    background-color: #2222; /* Цвет кнопки */
+    font-size: 36px;
+    border-radius: 50%;
+    border: none;
+  
+    color: #FFD700; /* Цвет ПЛЮСА */
+    transition: transform 0.5s ease;
+    animation: pulse 2s infinite;
+}
+
+.add-button:hover {
+    transform: scale(2.5);
+}
+
+/* Анимация пульсации + */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3); /* Увеличение размера */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal {
+    animation: bounceIn 0.5s forwards; /* Добавляем анимацию */
+}
+
+#eternalLinksList {
+    list-style-type: none; /* Убирает маркеры списка */
+    padding: 0; /* Убирает внутренние отступы */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+#eternalLinksList li {
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для элементов списка */
+    border-radius: 8px; /* Закругленные углы */
+    padding: 15px; /* Внутренние отступы */
+    margin-bottom: 10px; /* Отступ между элементами списка */
+    display: flex; /* Используем flex для распределения элементов */
+    justify-content: space-between; /* Разделяем элементы по краям */
+    align-items: center; /* Выравнивание по центру */
+    transition: background-color 0.3s ease; /* Плавный переход для фона при наведении */
+}
+
+#eternalLinksList li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Изменяем фон при наведении */
+}
+
+#eternalLinksList strong {
+    font-size: 1.1em; /* Увеличиваем размер шрифта для заголовка */
+    color: #FFD700; /* Золотистый цвет заголовка */
+}
+
+#eternalLinksList a {
+    color: #007BFF; /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 5px 10px; /* Внутренние отступы для ссылки */
+    border-radius: 5px; /* Закругленные углы для ссылки */
+    transition: background-color 0.3s ease; /* Плавный переход для фона ссылки */
+}
+
+#eternalLinksList a:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Фон ссылки при наведении */
+}
+
+#eternal-links-button {
+    background-color: transparent; /* Прозрачный фон для кнопки */
+    border: 2px dashed #FFD700; /* Прерывистая рамка золотистого цвета */
+    border-radius: 12px; /* Закругленные углы */
+    color: #FFD700; /* Цвет текста кнопки */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 1em; /* Размер шрифта */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
+}
+
+#eternal-links-button:hover {
+    background-color: rgba(255, 215, 0, 0.1); /* Фон при наведении */
+    color: #fff; /* Изменение цвета текста при наведении */
+}
+
+/*--------- ЕКСПЕРИМЕНТ ---------*/
+/* Добавьте это в конец вашего файла CSS */
+.content-block {
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для блока контента */
+    border: 1px dashed white; /* Прерывистая рамка белого цвета */
+    border-radius: 8px; /* Закругленные углы */
+    padding: 15px; /* Внутренние отступы */
+    margin: 10px 0; /* Отступ между элементами */
+    transition: background-color 0.3s ease; /* Плавный переход для фона при наведении */
+}
+
+.content-block:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Изменяем фон при наведении */
+}
+
+.content-block h3 {
+    color: #FFD700; /* Цвет заголовка */
+}
+
+.content-block a {
+    color: #007BFF; /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.content-block {
+    word-wrap: break-word; /* Для переноса длинных слов */
+    overflow-wrap: break-word; /* Поддержка для новых браузеров */
+    margin: 10px 0; /* Отступы между блоками контента */
+    padding: 10px; /* Внутренние отступы */
+    background-color: rgba(255, 255, 255, 0.1); /* Фон блока */
+    border-radius: 8px; /* Закругленные углы блока */
+}
+
+.content-block {
+    word-wrap: break-word; /* Для переноса длинных слов */
+    overflow-wrap: break-word; /* Поддержка для новых браузеров */
+    margin: 10px 0; /* Отступы между блоками контента */
+    padding: 10px; /* Внутренние отступы */
+    background-color: rgba(255, 255, 255, 0.1); /* Фон блока */
+    border-radius: 8px; /* Закругленные углы блока */
+}
+
+.link-button {
+    background-color: #6666; /* Например: background-color: #000000; для черного фона */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем границу */
+    padding: 10px; /* Внутренние отступы */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s; /* Плавный переход фона */
+    width: 100%; /* Кнопка занимает всю ширину */
+}
+
+.link-button:hover {
+    background-color: rgba(0, 123, 255, 0.5); /* Более насыщенный цвет при наведении */
+  background-color: #444; /* Например: background-color: #000000; для черного фона */
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Добавить небольшой отступ сверху */
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 8px; /* Отступ между чекбоксом и текстом */
+}
+
+.checkbox-container a {
+    color: blue;
+    text-decoration: underline;
+}
+
+input[type="checkbox"] {
+    transform: scale(2.5);
+}
+
+/* =============== ДОСТУПНО ==========*/
+
+.footer {
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем элементы по вертикали */
+}
+
+.ad-count {
+    position: absolute; /* Абсолютное позиционирование для размещения слева */
+    left: 10px; /* Отступ слева */
+    color: #333; /* Цвет текста */
+    font-weight: bold; /* Полужирный шрифт */
+}
+
+.add-button {
+    margin: 0; /* Убираем отступы */
+}
